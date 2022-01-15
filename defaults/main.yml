@@ -1,0 +1,7 @@
+---
+# @var user: 'root' # Define user to update
+user: 'root'
+# @var pass: 'root' # Define new password (plain or encrypted)
+pass: 'root'
+# @var password_type: 'plain' # Define password type (plain or encrypted)
+password_type: 'plain'
