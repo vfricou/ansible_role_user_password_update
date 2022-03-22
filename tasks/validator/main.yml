@@ -8,12 +8,14 @@
     msg: "Your OS {{ ansible_distribution }} is not supported"
   when: ansible_distribution not in supported_os
 
+
 - name: "validator | populate supported releases"
   ansible.builtin.set_fact:
-    supported_versions: "{{ (supported_platforms | selectattr('name', 'match', ansible_distribution)| list | first).versions }}"
+    # yamllint disable-line rule:line-length
+    supported_versions: "{{ (supported_platforms | selectattr('name', 'match', ansible_distribution)| list | first).versions }}" # noqa line-length
 
 - name: "validator | check compatibility"
   ansible.builtin.fail:
-    msg: "Your OS {{ ansible_distribution}} {{ ansible_distribution_version }} is not supported"
+    msg: "Your OS {{ ansible_distribution }} {{ ansible_distribution_version }} is not supported"
   when:
     - ansible_distribution_major_version|int not in supported_versions

@@ -1,3 +1,4 @@
+---
 # Supported OS definition
 supported_platforms:
   - name: Debian
