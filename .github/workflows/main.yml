@@ -1,0 +1,29 @@
+---
+on: push
+
+jobs:
+  molecule:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario:
+          - almalinux8
+          - debian10
+          - debian11
+          - rocky8
+          - ubuntu1804
+          - ubuntu2004
+          - ubuntu2104
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
+      - name: Molecule tests
+        uses: gofrolist/molecule-action@v2
+        with:
+          molecule_command: test
+          molecule_args: --scenario-name ${{ matrix.scenario }}
+        env:
+          ANSIBLE_FORCE_COLOR: '1'
