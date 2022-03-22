@@ -1,6 +1,0 @@
----
-- name: Verify
-  hosts: all
-  gather_facts: false
-  tasks:
-  - debug: 'Unable to check password update'
