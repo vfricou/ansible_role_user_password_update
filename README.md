@@ -1,5 +1,7 @@
 # Ansible Role: user password update
 
+![Master Branch Action Status](https://github.com/vfricou/ansible_role_user_password_update/actions/workflows/main.yml/badge.svg?branch=master)
+
 # Disclaimer
 
 I couldn't be responsible with any production issues if you use this role without any prior tests.  

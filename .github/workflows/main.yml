@@ -1,4 +1,5 @@
 ---
+name: CI Status
 on: [create, push, pull_request, release]
 
 jobs:
