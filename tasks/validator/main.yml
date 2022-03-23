@@ -12,7 +12,7 @@
 - name: "validator | populate supported releases"
   ansible.builtin.set_fact:
     # yamllint disable-line rule:line-length
-    supported_versions: "{{ (supported_platforms | selectattr('name', 'match', ansible_distribution)| list | first).versions }}" # noqa line-length
+    supported_versions: "{{ (supported_platforms | selectattr('name', 'match', ansible_distribution)| list | first).versions }}"  # noqa line-length
 
 - name: "validator | check compatibility"
   ansible.builtin.fail:
