@@ -1,5 +1,5 @@
 ---
-on: push
+on: [create, push, pull_request, release]
 
 jobs:
   molecule:
