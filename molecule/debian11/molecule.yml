@@ -27,5 +27,6 @@ scenario:
     - destroy
     - lint
     - create
+    - prepare
     - converge
     - destroy
