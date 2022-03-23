@@ -26,5 +26,7 @@ jobs:
         uses: BSFishy/pip-action@v1
         with:
           requirements: "https://gist.githubusercontent.com/vfricou/456bebc73df55c1dbf5351c808debaa1/raw/d4f06a57c46e628bf64a1a095a287bbf276f9864/ansible-latest.txt"
+      - name: Display current directory
+        run: pwd && ls -l
       - name: Perform molecule tests
         run: molecule test --scenario-name ${{ matrix.scenario }}
